@@ -9,7 +9,9 @@ pipeline {
         }
         stage('Create a container') {
             steps {
-                sh 'docker run -p 4000:3000 -d hello-app'
+                sh 'docker stop test'
+                sh 'docker rm test'
+                sh 'docker run -p 4001:3000 --name test -d hello-app'
             }
         }
     }
