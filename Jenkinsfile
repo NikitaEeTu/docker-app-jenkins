@@ -9,9 +9,7 @@ pipeline {
         }
         stage('Create a container') {
             steps {
-                sh 'docker stop test'
-                sh 'docker rm test'
-                sh 'docker run -p 4001:3000 --name test -d hello-app'
+                sh 'docker run -p 4002:3000 --name test -d hello-app'
             }
         }
     }
